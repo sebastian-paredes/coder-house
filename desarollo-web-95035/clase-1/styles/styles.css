@@ -1,0 +1,91 @@
+/* ============================================================
+   Tipografías (Google Fonts)
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+
+/* ============================================================
+   Base — body y tipografía global
+   ============================================================ */
+body {
+    background-color: #000000;
+    margin: 0px;
+    color: #ffffff;
+    font-family: "Rethink Sans", sans-serif;
+}
+
+/* ============================================================
+   Encabezados
+   ============================================================ */
+h1 {
+    color: #0000ff;
+}
+
+/* ============================================================
+   Header y navegación
+   ============================================================ */
+header {
+    background-color: #00ffff;
+}
+
+nav {
+    color: #8a2be2;
+}
+
+nav a {
+    color: #8a2be2;
+}
+
+nav ul {
+    color: #7fffd4;
+}
+
+nav ul,
+footer ul {
+    list-style: none;
+}
+
+/* ============================================================
+   Utilidades de texto
+   ============================================================ */
+.textoRojo {
+    color: #8b0000;
+    text-align: center;
+}
+
+.rem {
+    font-size: 1rem;
+}
+
+/* ============================================================
+   Imágenes
+   ============================================================ */
+section img {
+    width: 200px;
+}
+
+/* ============================================================
+   Contenedor y bloques de medidas (pixel / porcentaje / vw)
+   ============================================================ */
+.contenedor {
+    background-color: #5f9ea0;
+    width: 800px;
+    height: 400px;
+}
+
+.pixel {
+    background-color: #008000;
+    height: 200px;
+    width: 600px;
+}
+
+.porcentaje {
+    background-color: #800080;
+    height: 200px;
+    width: 50%;
+}
+
+.otra {
+    height: 100px;
+    background-color: #ffff00;
+    width: 50vw;
+}
