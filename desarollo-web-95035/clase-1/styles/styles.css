@@ -31,6 +31,16 @@ h1 {
 }
 
 /* ============================================================
+   Main — separación vertical entre secciones (reemplaza los <br>)
+   ============================================================ */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 40px;
+}
+
+/* ============================================================
    Header y navegación
    ============================================================ */
 header {
@@ -152,6 +162,99 @@ section img {
     position:fixed;
     bottom: 20px;
     right: 20px;
+}
+
+
+/* GRID */
+.contenedor-grid{
+    display: grid;
+    grid-template-areas:
+    "titulo titulo titulo"
+    "parrafo1 parrafo1 parrafo1"
+    "image1 parrafo2 parrafo2"
+    "image1 parrafo3 image2";
+    /* Declara las áreas, cuadrícula, zonas */
+    grid-template-rows: 80px 120px 150px 150px;
+    /* Cantidad y tamaño de cada Filas */
+    grid-template-columns: 30% 30% 40%;
+    /* Cantidad y tamaño de cada columna */
+    justify-content: center;
+     /* acomoda la grilla al contenedor horizontal */
+     justify-items: center;
+     /* acomoda al hijo de la grilla al contenedor en horizontal */
+     align-items: center;
+     /* acomoda al hijo de la grilla al contenedor en vertical */
+     row-gap: 24px;
+     column-gap: 24px;
+}
+
+.contenedor-grid img{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+.titulo{
+    grid-area: titulo;
+    color: #ffffff;
+}
+
+.parrafo1{
+    grid-area: parrafo1;
+}
+
+.parrafo2{
+    grid-area: parrafo2;
+}
+
+.parrafo3{
+    grid-area: parrafo3;
+}
+
+.image1{
+    grid-area: image1;
+    justify-self: end;
+    align-self: end;
+}
+
+.image2{
+    grid-area: image2;
+}
+
+
+
+
+/* Mobile */
+@media (max-width:480px){
+    body{
+         background-color:#a600ff;
+    }
+    header{
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    nav{
+        width: 90%;
+        margin-top: 12px;
+    }
+    /* Grid */
+    .contenedor-grid{
+        grid-template-areas:
+            "Titulo"
+            "Imagen1"
+            "Parrafo"
+            "Image2"
+            "Parrafo";
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 120px 150px; 120px 150px
+    }
+
+}
+/* Tablet */
+@media (min-width:481px) and (max-width:978px){
+    body{
+         background-color:#ffff00;
+    }
 }
 
 
