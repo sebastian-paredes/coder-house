@@ -165,7 +165,7 @@ section img {
     color: #000000;
     display: flex;
     /* Eje principal */
-    flex-direction: row;
+    flex-direction:row;
      /* Eje secundario */
     justify-content: center;
     align-items: center;
