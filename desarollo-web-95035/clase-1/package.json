@@ -1,0 +1,13 @@
+{
+  "name": "clase-1",
+  "version": "1.0.0",
+  "description": "Portfolio estático — compilación de Sass a CSS",
+  "private": true,
+  "scripts": {
+    "sass": "sass --watch sass/main.scss styles/estilos.css",
+    "sass:build": "sass sass/main.scss styles/estilos.css --style=compressed --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.101.0"
+  }
+}

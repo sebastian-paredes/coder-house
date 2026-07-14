@@ -1,0 +1,283 @@
+@charset "UTF-8";
+/* ============================================================
+   Tipografías (Google Fonts)
+   ============================================================ */
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap");
+/* ============================================================
+   Reset
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   Base — body y tipografía global
+   ============================================================ */
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Rethink Sans", sans-serif;
+  /* Layout de página con áreas nombradas (consistente en todas las páginas) */
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-rows: auto 1fr auto;
+}
+
+/* ============================================================
+   Encabezados
+   ============================================================ */
+h1 {
+  color: #0000ff;
+}
+
+/* ============================================================
+   Main — separación vertical entre secciones (reemplaza los <br>)
+   ============================================================ */
+main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 40px;
+}
+
+/* ============================================================
+   Header y navegación
+   ============================================================ */
+header {
+  grid-area: header;
+  background-color: #00ffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}
+
+nav {
+  color: #8a2be2;
+  display: flex; /* la caja pasa a ser contenedor flex */
+  justify-content: center; /* eje horizontal → centra */
+  align-items: center;
+}
+
+nav ul {
+  color: #7fffd4;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+nav a {
+  color: #8a2be2;
+}
+
+nav ul,
+footer ul {
+  list-style: none;
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 40px;
+}
+
+footer ul {
+  display: flex;
+  gap: 16px;
+}
+
+/* ============================================================
+   Utilidades de texto
+   ============================================================ */
+.textoRojo {
+  color: #8b0000;
+  text-align: center;
+}
+
+.rem {
+  font-size: 1rem;
+}
+
+/* ============================================================
+   Imágenes
+   ============================================================ */
+section img {
+  width: 200px;
+}
+
+/* ============================================================
+   Contenedor y bloques de medidas (pixel / porcentaje / vw)
+   ============================================================ */
+.contenedor {
+  background-color: #5f9ea0;
+  width: 90%;
+  height: 400px;
+}
+
+.pixel {
+  background-color: #008000;
+  height: 200px;
+  width: 75%;
+}
+
+.porcentaje {
+  background-color: #800080;
+  height: 200px;
+  width: 50%;
+}
+
+.otra {
+  height: 100px;
+  background-color: #ffff00;
+  width: 50vw;
+}
+
+/* ============================================================
+   Clase
+   ============================================================ */
+.box {
+  background-color: #ffff00;
+  color: #008000;
+  border: solid #ffffff 2px;
+  padding: 20px;
+  margin: 20px;
+}
+
+/* ============================================================
+   Flexbox
+   ============================================================ */
+.padreFlex {
+  height: 400px;
+  background-color: #00ffff;
+  color: #000000;
+  display: flex;
+  /* Eje principal */
+  flex-direction: row;
+  /* Eje secundario */
+  justify-content: center;
+  align-items: center;
+}
+
+.hijoFlex {
+  width: 18%;
+  height: 50px;
+  border: solid #000000 3px;
+  background-color: #7fffd4;
+  display: flex; /* la caja pasa a ser contenedor flex */
+  justify-content: center; /* eje horizontal → centra */
+  align-items: center;
+}
+
+.wp {
+  width: 70px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* GRID */
+.contenedor-grid {
+  display: grid;
+  grid-template-areas: "titulo titulo titulo" "parrafo1 parrafo1 parrafo1" "image1 parrafo2 parrafo2" "image1 parrafo3 image2";
+  /* Declara las áreas, cuadrícula, zonas */
+  grid-template-rows: 80px 120px 150px 150px;
+  /* Cantidad y tamaño de cada Filas */
+  grid-template-columns: 3fr 3fr 4fr;
+  /* Cantidad y tamaño de cada columna (fracciones, no px) */
+  justify-content: center;
+  /* acomoda la grilla al contenedor horizontal */
+  justify-items: center;
+  /* acomoda al hijo de la grilla al contenedor en horizontal */
+  align-items: center;
+  /* acomoda al hijo de la grilla al contenedor en vertical */
+  row-gap: 24px;
+  column-gap: 24px;
+}
+
+.contenedor-grid img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.titulo {
+  grid-area: titulo;
+  color: #ffffff;
+}
+
+.parrafo1 {
+  grid-area: parrafo1;
+}
+
+.parrafo2 {
+  grid-area: parrafo2;
+}
+
+.parrafo3 {
+  grid-area: parrafo3;
+}
+
+.image1 {
+  grid-area: image1;
+  justify-self: end;
+  align-self: end;
+}
+
+.image2 {
+  grid-area: image2;
+}
+
+/* ============================================================
+   Breakpoint principal del ejercicio: 1024px
+   Laptop / tablet grande → el grid pasa de 3 a 2 columnas
+   y los contenedores ocupan todo el ancho disponible.
+   ============================================================ */
+@media (max-width: 1024px) {
+  body {
+    background-color: #ffff00;
+  }
+  .contenedor,
+  .pixel {
+    width: 100%;
+  }
+  .contenedor-grid {
+    grid-template-areas: "titulo   titulo" "parrafo1 parrafo1" "image1   parrafo2" "image1   parrafo3" "image2   image2";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+/* ============================================================
+   Mobile: hasta 480px → todo en una sola columna
+   ============================================================ */
+@media (max-width: 480px) {
+  body {
+    background-color: #a600ff;
+  }
+  header {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  nav {
+    width: 90%;
+  }
+  .padreFlex {
+    flex-direction: column;
+  }
+  .hijoFlex {
+    width: 70%;
+  }
+  .contenedor-grid {
+    grid-template-areas: "titulo" "parrafo1" "image1" "parrafo2" "parrafo3" "image2";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
